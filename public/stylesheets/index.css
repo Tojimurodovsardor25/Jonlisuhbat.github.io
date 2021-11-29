@@ -79,7 +79,7 @@ header,
 
 .nav-fixed-bottom {
   width: 100%;
-  height: 75px;
+  height: 99px;
   bottom: 0;
   position: absolute;
   background: #0f402e;
@@ -190,9 +190,10 @@ header,
   background-color: #1d261d;
 }
 
-.group-content {
+.data-group .group-content {
   width: 100%;
-  height: 100%;
+  max-width: 50%;
+  height: auto;
   padding: 11px 3px 9px 3px;
 }
 
@@ -260,16 +261,13 @@ header,
 }
 
 .groups-gp {
-  overflow: hidden;
   flex: 1;
-  height: 732px;
-  overflow-y: auto;
   border-bottom: 1px solid #191919;
 }
 
 .group {
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
   pointer-events: all;
   transition: scrollbar-color .3s ease;
 }
@@ -372,10 +370,21 @@ section a::after {
 
 .title-text-goup {
   padding: 19px 33px;
-  height: 465px;
   background: #0f402e;
   border-bottom: 1px solid #191919;
 }
+
+.meta-msg .data-group {
+  /* padding-top: 83px;
+  padding-bottom: 107px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+/* .group-message .meta-msg {
+  height: 100%;
+} */
 
 .title-text-goup span {
   white-space: pre-line;
@@ -432,18 +441,25 @@ p {
 .users-txt {
   width: 100%;
   height: 100%;
-  padding: 8.5% 3% 6.4%;
+  /* padding: 8.5% 3% 6.4%; */
 }
 
 .txt-grid {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
+  padding-bottom: 107px;
   position: absolute;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.group-content .message {
+.txt-grid .group-message {
+  padding: 8.5% 3% 1.4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.data-group .group-content .message {
   max-width: max-content;
   display: flex;
   align-items: center;
@@ -451,7 +467,7 @@ p {
   background: #d9d9d9;
   padding: 3px 9px;
   position: relative;
-  max-width: 50%;
+  width: auto;
   margin: 9px 45px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -459,7 +475,7 @@ p {
   border: 3px solid #05100cb5;
 }
 
-.group-content .message::after {
+.data-group .group-content .message::after {
   content: "";
   width: 0px;
   height: 0px;
