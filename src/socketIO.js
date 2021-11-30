@@ -4,7 +4,12 @@ const io = socket()
 io.on('connection', (socket) => {
     console.log('Socket io is working...');
 
-    socket.emit('message', 'Welcom to socket io')
+    // socket.emit('message', 'Suhbat rasmiy sahifasiga hush kelibsiz')
+
+    socket.on('message', (data) => {
+        console.log(data);
+        io.emit('message', data)    
+    })
 })
 
 module.exports = io

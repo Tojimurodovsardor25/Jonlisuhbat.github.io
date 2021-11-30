@@ -218,6 +218,7 @@ header,
   height: 100%;
   display: flex;
   align-items: center;
+  padding: 0 15px;
 }
 
 .group-fixed-top .group-link-info {
@@ -428,7 +429,7 @@ section a::after {
   background: none;
   border: none;
   position: absolute;
-  top: 9px;
+  top: 31px;
   right: 11px;
 }
 
@@ -486,7 +487,7 @@ p {
 }
 
 .data-group .group-content .message {
-  max-width: inherit;
+  max-width: max-content;
   display: flex;
   align-items: center;
   align-content: center;
@@ -494,7 +495,7 @@ p {
   padding: 3px 9px;
   position: relative;
   width: auto;
-  margin: 9px 45px;
+  margin: 9px 55px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 33px;
@@ -510,7 +511,8 @@ p {
 
 .context-group {
   position: relative;
-  width: 99%;
+  width: 100%;
+  padding: 1px 57px 3px 2px;
 }
 
 .avatar-text {
@@ -594,6 +596,7 @@ data-time {
 
 .form-input .border-input {
   width: 55%;
+  height: 51px;
   display: flex;
   align-items: center;
   align-content: center;
@@ -603,30 +606,90 @@ data-time {
   background: #062017a2;
   transition: border-color ease-in-out 0.09s, box-shadow ease-in-out 0.09s;
 }
+
 .fixed-info .form-input input {
   width: 100%;
   border: none;
   background: none;
   box-shadow: none;
   color: rgb(192, 207, 190);
+  background-color: initial !important;
 }
 
 .fixed-info .form-input input:focus {
   outline: none;
+  background: none;
+  background-color: initial !important;
 }
 
 .fixed-info .form-input input::placeholder {
   color: rgb(192, 207, 190);
   font-family: "Work Sans", sans-serif;
+  background-color: initial !important;
 }
 
 .fixed-info .form-input .border-input:focus-within {
   box-shadow: 0px 0px 5px 0px rgba(61, 233, 70, 0.445);
   /* box-shadow: 0px 0px 3px 2px #0f402e; */
+  background: none;
 }
 
 .avatar-name .name {
   font-family: "Work Sans", sans-serif;
+}
+
+.Welcom {
+  position: absolute;
+  top: 177px;
+  max-width: max-content;
+  width: 299px;
+  left: 35%;
+  right: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  filter: drop-shadow(0px 0px 3px rgb(57, 255, 191));
+}
+
+.s-h-info {
+  width: 100%;
+  height: 35px;
+  border-radius: 33px;
+  background: #6bd99c;
+  color: rgb(43 43 43);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid;
+}
+
+.Welcom .s-n-info {
+  display: block;
+  font-size: 13px;
+  max-width: max-content;
+  height: 23px;
+  background: #6bd99c;
+  font-weight: 600;
+  color: #454545;
+  border-radius: 33px;
+  padding: 1px 7px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  font-family: "Work Sans", sans-serif;
+  border: 1px solid;
+}
+
+.avatar-text span {
+  width: 100%;
+  word-break: break-word;
+}
+
+.nest-None {
+  display: none;
 }
 
 @media (max-width: 1433px) {
@@ -686,6 +749,10 @@ data-time {
   .slide-left {
     min-width: 19%;
   }
+
+  .data-group .group-content .message {
+    margin: 9px 55px;
+  }
 }
 
 @media (max-width: 1307px) {
@@ -700,10 +767,30 @@ data-time {
   .slide-left .profil-users .usersphone {
     font-size: 13px;
   }
+
+  .data-group .group-content .message {
+    margin: 9px 63px;
+  }
+
+  .data-group .group-content {
+    max-width: 73%;
+  }
 }
 
 @media (max-width: 1199px) {
   .group-name {
+    font-size: 13px;
+  }
+
+  .data-group .group-content {
+    max-width: 79%;
+  }
+
+  .data-group .group-content .message {
+    margin: 9px 67px;
+  }
+
+  .avatar-text {
     font-size: 13px;
   }
 
@@ -748,6 +835,14 @@ data-time {
 @media (max-width: 1041px) {
   .profil-img .group_name {
     font-size: 15px;
+  }
+
+  .data-group .group-content .message {
+    margin: 9px 71px 0 63px;
+  }
+
+  .data-group .group-content {
+    max-width: 100%;
   }
 
   /* .followers-in .foollower-num {} */
@@ -798,5 +893,19 @@ data-time {
 @media (max-width: 991px) {
   .slide-right {
     display: none;
+  }
+
+  .data-group .group-content {
+    max-width: 100%;
+  }
+
+  .data-group .group-content .message {
+    margin: 9px 79px 0 63px;
+  }
+}
+
+@media (max-width: 579px) {
+  .avatar-text {
+    font-size: 12px;
   }
 }
