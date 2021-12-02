@@ -6,6 +6,8 @@ io.on('connection', (socket) => {
 
     // socket.emit('message', 'Suhbat rasmiy sahifasiga hush kelibsiz')
 
+    socket.broadcast.emit('joined', 'Faydalanuvchi online')
+
     socket.on('message', (data) => {
         console.log(data);
         io.emit('message', data)    
