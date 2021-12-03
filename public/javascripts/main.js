@@ -9,7 +9,20 @@ socket.on('message', (data) => {
   console.log(data);
   OutputMessages(data)
 })
+
+const { username, mobilnumber, userbiografia, password1, password2, email } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true
+})
+
+socket.emit('joinRoom', ({ username, mobilnumber, userbiografia, password1, password2, email }))
+
+console.log(user, 'User new');
+
 socket.on('joined', (msg) => {
+  console.log(msg);
+  OutputMessages(msg)
+})
+socket.on('chiqish', (msg) => {
   console.log(msg);
   OutputMessages(msg)
 })
@@ -24,7 +37,7 @@ inputForm.addEventListener('submit', (e) => {
   input.value = ''
 })
 
-const OutputMessages = (NewMessages) => {
+const OutputMessages = (data) => {
   const div = document.createElement('div')
 
   div.innerHTML = `
@@ -38,11 +51,11 @@ const OutputMessages = (NewMessages) => {
       </avatar-im>
       <div class="context-group">
         <div class="avatar-name">
-         <span class="name">Sardor1</span>
+         <span class="name">${user.username}</span>
         </div>
        <div class="avatar-text">
-        <span>${NewMessages}</span>
-          <data-time class="data-time">11:03</data-time>
+        <span>${data.text}</span>
+          <data-time class="data-time">${data.time}</data-time>
        </div>
       </div>
     </div>
