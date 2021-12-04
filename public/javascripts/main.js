@@ -10,7 +10,7 @@ socket.on('message', (data) => {
   OutputMessages(data)
 })
 
-const { username, mobilnumber, userbiografia, password1, password2, email } = Qs.parse(location.search, {
+const { username, mobilnumber, userbiografia, password1, password2, email, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 })
 
